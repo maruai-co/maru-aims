@@ -22,9 +22,20 @@ import { Label } from "@/components/ui/label"
 import { Plus, Search, Edit, Trash2 } from "lucide-react"
 import { api } from "@/lib/api"
 
+interface AiSystem {
+  id: string
+  name: string
+  purpose: string
+  owner: string
+  department: string
+  riskLevel: string
+  status: string
+  dataSources: string[]
+}
+
 export default function AISystems() {
   const [loading, setLoading] = useState(true)
-  const [systems, setSystems] = useState<any[]>([])
+  const [systems, setSystems] = useState<AiSystem[]>([])
   const [error, setError] = useState<string | null>(null)
   const [searchTerm, setSearchTerm] = useState("")
   const [departmentFilter, setDepartmentFilter] = useState("all")
@@ -43,7 +54,7 @@ export default function AISystems() {
     const fetchSystems = async () => {
       try {
         setLoading(true)
-        const data = await api.getAiSystems()
+        const data = (await api.getAiSystems()) as AiSystem[]
         setSystems(data)
         setError(null)
       } catch (err) {
