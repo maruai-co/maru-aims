@@ -24,9 +24,19 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { FileText, Upload, Download, Share2, MoreVertical, Search } from "lucide-react"
 import { api } from "@/lib/api"
 
+interface Policy {
+  id: string
+  name: string
+  description: string
+  status: string
+  category: string
+  version: string
+  lastUpdated: string
+}
+
 export default function Policies() {
   const [loading, setLoading] = useState(true)
-  const [policies, setPolicies] = useState<any[]>([])
+  const [policies, setPolicies] = useState<Policy[]>([])
   const [error, setError] = useState<string | null>(null)
   const [searchTerm, setSearchTerm] = useState("")
   const [activeCategory, setActiveCategory] = useState("all")
@@ -42,7 +52,7 @@ export default function Policies() {
     const fetchPolicies = async () => {
       try {
         setLoading(true)
-        const data = await api.getPolicies()
+        const data = await api.getPolicies() as Policy[]
         setPolicies(data)
         setError(null)
       } catch (err) {
