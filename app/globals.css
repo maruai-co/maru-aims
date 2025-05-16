@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 12%; /* #1e1e1e (dark gray) */
+    --card-foreground: 0 0% 100%; /* White text for contrast */
+
+    --popover: 0 0% 12%; /* #1e1e1e */
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 84% 60%; /* Red #ef4444 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 84% 96%;
+    --accent-foreground: 0 84% 60%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Changed border color to a darker gray instead of red */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 84% 60%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 12%; /* #1e1e1e */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 84% 60%;
+    --sidebar-accent: 0 0% 15%; /* Slightly darker gray for accent */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%; /* Changed to darker gray */
+    --sidebar-ring: 0 0% 100%;
+
+    --chart-1: 0 84% 60%;
+    --chart-2: 160 95% 45%;
+    --chart-3: 35 95% 55%;
+    --chart-4: 270 95% 60%;
+  }
+
+  .dark {
+    --background: 0 0% 12%; /* #1e1e1e */
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 12%; /* #1e1e1e */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 12%; /* #1e1e1e */
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 84% 60%; /* Red #ef4444 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Changed border color to a darker gray instead of red */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 84% 60%;
+
+    --sidebar-background: 0 0% 12%; /* #1e1e1e */
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 84% 60%;
+    --sidebar-accent: 0 0% 15%; /* Slightly darker gray for accent */
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%; /* Changed to darker gray */
+    --sidebar-ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

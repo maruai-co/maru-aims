@@ -1,0 +1,42 @@
+export const mockPoliciesData = [
+  {
+    id: "1",
+    name: "AI Ethics Policy",
+    description: "Guidelines for ethical AI development and deployment",
+    category: "Ethics",
+    lastUpdated: "2023-12-15",
+    version: "1.2",
+  },
+  {
+    id: "2",
+    name: "Data Privacy Framework",
+    description: "Standards for handling personal data in AI systems",
+    category: "Privacy",
+    lastUpdated: "2024-01-20",
+    version: "2.0",
+  },
+  {
+    id: "3",
+    name: "Bias Mitigation Guidelines",
+    description: "Procedures to identify and mitigate bias in AI models",
+    category: "Bias",
+    lastUpdated: "2024-02-05",
+    version: "1.1",
+  },
+  {
+    id: "4",
+    name: "AI Explainability Standards",
+    description: "Requirements for making AI decisions transparent and explainable",
+    category: "Explainability",
+    lastUpdated: "2024-03-10",
+    version: "1.0",
+  },
+  {
+    id: "5",
+    name: "AI Risk Management Framework",
+    description: "Comprehensive approach to managing AI-related risks",
+    category: "Risk",
+    lastUpdated: "2024-04-01",
+    version: "1.3",
+  },
+]
