@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/maru-aims',
+  basePath: '/aims',
   images: {
     unoptimized: true,
   },
