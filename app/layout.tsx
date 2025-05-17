@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "AI Management System",
   description: "Manage AI responsibly, ethically, and compliantly with ISO 42001.",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -20,13 +20,18 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-[#1e1e1e] text-white`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
           <SidebarProvider>
             <div className="flex min-h-screen">
               <AppSidebar />
-              <main className="flex-1 overflow-auto">{children}</main>
+              <main className="flex-1 overflow-auto bg-background">{children}</main>
             </div>
           </SidebarProvider>
         </ThemeProvider>
