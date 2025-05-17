@@ -14,6 +14,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { FileText, Upload, Download, Share2, MoreVertical, Search } from "lucide-react"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
+import { NavBar } from "@/components/nav-bar"
 import { api } from "@/lib/api"
 
 interface Policy {
@@ -121,10 +122,7 @@ export default function Policies() {
   if (loading) {
     return (
       <>
-        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-          <h1 className="text-3xl font-bold">Policy Repository</h1>
-          <UserAvatar />
-        </header>
+        <NavBar title="AI Policies" />
         <div className="flex-1 overflow-y-auto">
           <div className="p-6 flex items-center justify-center">
             <p>Loading policies...</p>
@@ -138,10 +136,7 @@ export default function Policies() {
   if (error) {
     return (
       <>
-        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-          <h1 className="text-3xl font-bold">Policy Repository</h1>
-          <UserAvatar />
-        </header>
+        <NavBar title="AI Policies" />
         <div className="flex-1 overflow-y-auto">
           <div className="p-6 flex items-center justify-center">
             <Card className="border border-border shadow-sm">
@@ -161,11 +156,8 @@ export default function Policies() {
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-        <h1 className="text-3xl font-bold">Policy Repository</h1>
-        <UserAvatar />
-      </header>
-      <div className="flex-1 overflow-y-auto">
+      <NavBar title="AI Policies" />
+      <div className="flex-1 overflow-y-auto pr-80">
         <div className="p-6 space-y-6">
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             <div className="relative flex-1">

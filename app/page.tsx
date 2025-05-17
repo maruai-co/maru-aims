@@ -1,13 +1,13 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { UserAvatar } from "@/components/user-avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
 import { Badge } from "@/components/ui/badge"
 import { BarChart } from "@/components/charts/bar-chart"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
+import { NavBar } from "@/components/nav-bar"
 import { api } from "@/lib/api"
 
 export default function Dashboard() {
@@ -42,11 +42,8 @@ export default function Dashboard() {
   if (loading) {
     return (
       <>
-        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
-          <UserAvatar />
-        </header>
-        <div className="flex-1 overflow-y-auto">
+        <NavBar title="Dashboard" />
+        <div className="flex-1 overflow-y-auto pr-80">
           <div className="p-6 flex items-center justify-center">
             <p>Loading dashboard data...</p>
           </div>
@@ -59,11 +56,8 @@ export default function Dashboard() {
   if (error) {
     return (
       <>
-        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-          <h1 className="text-3xl font-bold">Dashboard</h1>
-          <UserAvatar />
-        </header>
-        <div className="flex-1 overflow-y-auto">
+        <NavBar title="Dashboard" />
+        <div className="flex-1 overflow-y-auto pr-80">
           <div className="p-6 flex items-center justify-center">
             <Card className="border border-border shadow-sm">
               <CardContent className="p-6">
@@ -82,11 +76,8 @@ export default function Dashboard() {
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-        <h1 className="text-3xl font-bold">Dashboard</h1>
-        <UserAvatar />
-      </header>
-      <div className="flex-1 overflow-y-auto">
+      <NavBar title="Dashboard" />
+      <div className="flex-1 overflow-y-auto pr-80">
         <div className="p-6 space-y-6">
           {/* Compliance Overview */}
           <section>

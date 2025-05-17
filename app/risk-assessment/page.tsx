@@ -2,7 +2,6 @@
 
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
-import { UserAvatar } from "@/components/user-avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -14,6 +13,7 @@ import { Slider } from "@/components/ui/slider"
 import { BarChart } from "@/components/charts/bar-chart"
 import { Download, FileText } from "lucide-react"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
+import { NavBar } from "@/components/nav-bar"
 
 export default function RiskAssessment() {
   const [currentStep, setCurrentStep] = useState(1)
@@ -29,11 +29,8 @@ export default function RiskAssessment() {
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-        <h1 className="text-3xl font-bold">Risk Assessment</h1>
-        <UserAvatar />
-      </header>
-      <div className="flex-1 overflow-y-auto">
+      <NavBar title="Risk Assessment" />
+      <div className="flex-1 overflow-y-auto pr-80">
         <div className="p-6">
           <Tabs defaultValue="wizard" className="w-full">
             <TabsList className="grid w-full grid-cols-2">

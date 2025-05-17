@@ -3,7 +3,6 @@
 import type React from "react"
 
 import { useEffect, useState } from "react"
-import { UserAvatar } from "@/components/user-avatar"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -21,6 +20,7 @@ import {
 import { Label } from "@/components/ui/label"
 import { Plus, Search, Edit, Trash2 } from "lucide-react"
 import { DashboardSidebar } from "@/components/dashboard-sidebar"
+import { NavBar } from "@/components/nav-bar"
 import { api } from "@/lib/api"
 
 interface AiSystem {
@@ -136,10 +136,7 @@ export default function AISystems() {
   if (loading) {
     return (
       <>
-        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-          <h1 className="text-3xl font-bold">AI Systems Registry</h1>
-          <UserAvatar />
-        </header>
+        <NavBar title="AI Systems Registry" />
         <div className="flex-1 overflow-y-auto">
           <div className="p-6 flex items-center justify-center">
             <p>Loading AI systems...</p>
@@ -153,10 +150,7 @@ export default function AISystems() {
   if (error) {
     return (
       <>
-        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-          <h1 className="text-3xl font-bold">AI Systems Registry</h1>
-          <UserAvatar />
-        </header>
+        <NavBar title="AI Systems Registry" />
         <div className="flex-1 overflow-y-auto">
           <div className="p-6 flex items-center justify-center">
             <Card className="border border-border shadow-sm">
@@ -176,11 +170,8 @@ export default function AISystems() {
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
-        <h1 className="text-3xl font-bold">AI Systems Registry</h1>
-        <UserAvatar />
-      </header>
-      <div className="flex-1 overflow-y-auto">
+      <NavBar title="AI Systems Registry" />
+      <div className="flex-1 overflow-y-auto pr-80">
         <div className="p-6 space-y-6">
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             <div className="flex flex-1 gap-4">
