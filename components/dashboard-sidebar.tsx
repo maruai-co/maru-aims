@@ -7,8 +7,8 @@ import { Bell, Calendar, Clock, Users, CheckCircle2 } from "lucide-react"
 
 export function DashboardSidebar() {
   return (
-    <div className="w-80 border-l border-border p-4 hidden lg:block">
-      <div className="space-y-6">
+    <div className="fixed right-0 top-[65px] w-80 h-[calc(100vh-65px)] border-l border-border bg-background overflow-y-auto">
+      <div className="p-4 space-y-6">
         {/* Notifications */}
         <Card className="border border-border shadow-sm">
           <CardHeader className="pb-2">

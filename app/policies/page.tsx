@@ -120,48 +120,53 @@ export default function Policies() {
 
   if (loading) {
     return (
-      <div className="flex flex-col min-h-screen">
-        <header className="flex items-center justify-between p-4 border-b border-border">
+      <>
+        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
           <h1 className="text-3xl font-bold">Policy Repository</h1>
           <UserAvatar />
         </header>
-        <div className="flex-1 p-6 flex items-center justify-center">
-          <p>Loading policies...</p>
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-6 flex items-center justify-center">
+            <p>Loading policies...</p>
+          </div>
         </div>
-      </div>
+        <DashboardSidebar />
+      </>
     )
   }
 
   if (error) {
     return (
-      <div className="flex flex-col min-h-screen">
-        <header className="flex items-center justify-between p-4 border-b border-border">
+      <>
+        <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
           <h1 className="text-3xl font-bold">Policy Repository</h1>
           <UserAvatar />
         </header>
-        <div className="flex-1 p-6 flex items-center justify-center">
-          <Card className="border border-border shadow-sm">
-            <CardContent className="p-6">
-              <p className="text-destructive">{error}</p>
-              <Button onClick={() => window.location.reload()} className="mt-4">
-                Retry
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="flex-1 overflow-y-auto">
+          <div className="p-6 flex items-center justify-center">
+            <Card className="border border-border shadow-sm">
+              <CardContent className="p-6">
+                <p className="text-destructive">{error}</p>
+                <Button onClick={() => window.location.reload()} className="mt-4">
+                  Retry
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
-      </div>
+        <DashboardSidebar />
+      </>
     )
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <header className="flex items-center justify-between p-4 border-b border-border">
+    <>
+      <header className="sticky top-0 z-10 flex items-center justify-between p-4 border-b border-border bg-background">
         <h1 className="text-3xl font-bold">Policy Repository</h1>
         <UserAvatar />
       </header>
-
-      <div className="flex flex-1">
-        <div className="flex-1 p-6 space-y-6">
+      <div className="flex-1 overflow-y-auto">
+        <div className="p-6 space-y-6">
           <div className="flex flex-col md:flex-row gap-4 justify-between">
             <div className="relative flex-1">
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
@@ -309,8 +314,8 @@ export default function Policies() {
             ))}
           </Tabs>
         </div>
-        <DashboardSidebar />
       </div>
-    </div>
+      <DashboardSidebar />
+    </>
   )
 }
