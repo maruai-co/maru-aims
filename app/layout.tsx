@@ -32,7 +32,7 @@ export default function RootLayout({
             <div className="flex min-h-screen">
               <AppSidebar />
               <div className="flex-1 flex">
-                <div className="flex-1 flex flex-col relative pt-16">
+                <div className="flex-1 flex flex-col relative pt-[5.5rem]">
                   {children}
                 </div>
               </div>
